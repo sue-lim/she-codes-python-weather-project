@@ -40,42 +40,103 @@
 #     return(str(new_date_string))
 
 
-###########################################################################
 
-# from csv import reader
-import csv 
-def load_data_from_csv(csv_file):
-    
-    weather_data = []
-    with open(csv_file, 'r') as csv_file:
-                reader = csv.reader(csv_file)
-                next(reader)
-                # data = list(reader)
-
-                for line in reader:
-                    weather_data.append(line)
-                # for data in weather_data:
-            
-                    print(weather_data)
-    return weather_data
+#################################COMPLETED#################################
+# # from csv import reader
 # import csv 
 # def load_data_from_csv(csv_file):
     
 #     weather_data = []
 #     with open(csv_file, 'r') as csv_file:
-#                 reader = csv.reader(csv_file)
-#                 next(reader)
-#                 w_data = list(reader)
-#                 # for line in reader:
-#                 #     weather_data.append(line)
-            
-#                 print(w_data)
+#         reader = csv.reader(csv_file)
+#         next(reader) #skip the header line
+#         data = list(reader) #sublist command
+#         print(data) #row
+#         for line in data: 
+                    
+#             if line: ##check for if line is not empty then append##
+#                 weather_data.append([line[0],int(line[1]),int(line[2])])
+                    
+#     return weather_data
+
 # load_data_from_csv("tests\data\example_one.csv")  
 # load_data_from_csv("tests\data\example_two.csv")  
 # load_data_from_csv("tests\data\example_three.csv") 
     #     print(weather_data)
         
-    # print(w_data)
+###########################################################################
+def find_min(weather_data):
+    list_of_numbers = (float(weather_data))
+    min_number = min(list_of_numbers)
+    for i in range(len(list_of_numbers)):
+            if list_of_numbers[i] == min_number:
+                min_index = i
+                
+                print(min_index)
+                print(min_number)
+
+
+#     t = weather_data
+#     min_val = t[0]
+#     min_idx = 0
+#     for i in range(len(t)):
+#         if t < min_val:
+#             min_val = t[i]
+#             min_idx = i 
+            
+#     print(min_val)
+#     print(min_idx)
+###########################################################################
+    # min_val = weather_data[0]
+    # min_idx = 0
+    # for i in  range (1, len(weather_data)):
+    #     if weather_data[i] < min_val:
+    #         min_val = weather_data[i]
+    #         min_idx = i      
+    # # return (float(min_val), min_idx)
+    # print(float(min_val))
+    # print(min_idx)
+###########################################################################
+    # num = weather_data[0]
+    # min_index = 0
+    # min_num = min[weather_data]
+    # for i in range(len(weather_data)):
+    #     if num[i] == min_num:
+    #         min_index = i
+    # return(float(num, min_index))
+###########################################################################
+    # min_val = weather_data[0]
+    # min_idx = 0
+    # for i in  range (1, len(weather_data)):
+    #     if weather_data[i] < min_val:
+    #         min_val = weather_data[i]
+            
+    # for i in  range (1, len(weather_data)):
+    #     if weather_data[i] < min_val:
+    #         min_idx == i
+            
+    # return (float(min_val), min_idx)
+
+    # minimum = weather_data[0]
+    # for i in  range (1, len(weather_data)):
+    #     if weather_data[i] < minimum:
+    #         minimum = weather_data[i]
+            
+    # print(minimum, weather_data)
+    
+###########################################################################
+# 
+    # """Calculates the minimum value in a list of numbers.
+
+    # Args:
+    #     weather_data: A list of numbers.
+    # Returns:
+    #     The minium value and it's position in the list.
+    # """
+    # pass
+
+# print(minimum)
+
     
 
 

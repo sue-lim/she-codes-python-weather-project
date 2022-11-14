@@ -33,7 +33,7 @@ def convert_date(iso_string):
     Returns:
         A date formatted like: Weekday Date Month Year e.g. Tuesday 06 July 2021
     """
-    pass
+pass
 
 #################### PASSED #################### 
 def convert_f_to_c(temp_in_farenheit):
@@ -64,27 +64,11 @@ def calculate_mean(weather_data):
     #     A float representing the mean value.
     # """
     
-    pass
-
-
-# def load_data_from_csv(csv_file):
-#     import csv
-# with open("tests\data\example_one.csv", 'r') as csv_file:
-#     reader = csv.reader(csv_file)
-#     next(reader)
-#     w_data = list(reader)
-#     weather_data = []
-    
-#     for row in reader:
-#         weather_data.append(row)
-#         print(weather_data)
-        
-#     print(w_data)
+pass
 
 import csv 
 def load_data_from_csv(csv_file):
-    
-    weather_data = []
+    weather_data = [] #define this as a list
     with open(csv_file, 'r') as csv_file:
         reader = csv.reader(csv_file)
         next(reader) #skip the header line
@@ -96,12 +80,6 @@ def load_data_from_csv(csv_file):
                 weather_data.append([line[0],int(line[1]),int(line[2])])
                     
     return weather_data
-#                 print(w_data)
-# load_data_from_csv("tests\data\example_one.csv")  
-# load_data_from_csv("tests\data\example_two.csv")  
-# load_data_from_csv("tests\data\example_three.csv") 
-
-
 
 # """Reads a csv file and stores the data in a list.
 
@@ -110,10 +88,63 @@ def load_data_from_csv(csv_file):
 #     Returns:
 #         A list of lists, where each sublist is a (non-empty) line in the csv file.
 #     """
-# pass
+pass
 
 
+# min_idx = []
 def find_min(weather_data):
+    min_val = weather_data
+    min_num = min(min_val, default=0)
+    for i in range(len(min_val)):
+        if min_val [i] == min_num:
+            min_idx = i
+
+    # print (f'({min_num}, {min_idx})')
+
+
+    return(((float(min_num)),min_idx))
+        
+############################################################################## 
+# def find_min(weather_data):
+#     t = weather_data
+#     min_val = t[0]
+#     min_idx = [i for i in range(len(t)) if t == min_val]
+#     for i in range(len(t)):
+#         if t[i] < min_val: 
+#             min_val = t[i]
+#             min_idx = i
+            
+#     print(f'({min_val}, {min_idx})')
+#     return find_min
+
+    # ############################################################################
+    # # t = weather_data
+    # # min_val = t[0]
+    # # min_idx = 0 
+    # # for i in range(len(weather_data)):
+    # #     if t[i] < min_val: 
+    # #         min_val = t[i]
+    # #         min_idx = i 
+    # # return (f'({min_val}, {min_idx})')
+    # # # print(float(min_val))
+    # # # print(min_idx)
+    # ############################################################################
+    # # min_val = weather_data[0]
+    # # min_idx = 0
+    # # for i in  range (1, len(weather_data)):
+    # #     if weather_data[i] < min_val:
+    # #         min_val = weather_data[i]
+    # #         min_idx = i      
+    # # # return (float(min_val), min_idx)
+    # # print(float(min_val))
+    # # print(min_idx)
+    ############################################################################
+    # minimum = weather_data[0]
+    # for value in weather_data[1:]:
+    #     if value < minimum:
+    #         minimum = value
+        
+    # return minimum
     """Calculates the minimum value in a list of numbers.
 
     Args:
@@ -121,10 +152,20 @@ def find_min(weather_data):
     Returns:
         The minium value and it's position in the list.
     """
-    pass
+pass
 
 
 def find_max(weather_data):
+    max_val = weather_data
+    max_num = max(max_val, default=0)
+    for i in range(len(max_val)):
+        if max_val [i] == max_num:
+            max_idx = i
+
+    # print (f'({max_num}, {max_idx})')
+
+
+    return(((float(max_num)),max_idx))
     """Calculates the maximum value in a list of numbers.
 
     Args:
@@ -132,7 +173,7 @@ def find_max(weather_data):
     Returns:
         The maximum value and it's position in the list.
     """
-    pass
+pass
 
 
 def generate_summary(weather_data):
