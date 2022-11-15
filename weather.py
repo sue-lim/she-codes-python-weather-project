@@ -66,7 +66,9 @@ def calculate_mean(weather_data):
     
 pass
 
-import csv 
+import csv
+
+
 def load_data_from_csv(csv_file):
     weather_data = [] #define this as a list
     with open(csv_file, 'r') as csv_file:
@@ -91,108 +93,71 @@ def load_data_from_csv(csv_file):
 pass
 
 
-# min_idx = []
+
 def find_min(weather_data):
-    min_val = weather_data
-    min_num = min(min_val, default=0)
-    for i in range(len(min_val)):
-        if min_val [i] == min_num:
-            min_idx = i
-
-    # print (f'({min_num}, {min_idx})')
-
-
-    return(((float(min_num)),min_idx))
-        
-############################################################################## 
-# def find_min(weather_data):
-#     t = weather_data
-#     min_val = t[0]
-#     min_idx = [i for i in range(len(t)) if t == min_val]
-#     for i in range(len(t)):
-#         if t[i] < min_val: 
-#             min_val = t[i]
-#             min_idx = i
-            
-#     print(f'({min_val}, {min_idx})')
-#     return find_min
-
-    # ############################################################################
-    # # t = weather_data
-    # # min_val = t[0]
-    # # min_idx = 0 
-    # # for i in range(len(weather_data)):
-    # #     if t[i] < min_val: 
-    # #         min_val = t[i]
-    # #         min_idx = i 
-    # # return (f'({min_val}, {min_idx})')
-    # # # print(float(min_val))
-    # # # print(min_idx)
-    # ############################################################################
-    # # min_val = weather_data[0]
-    # # min_idx = 0
-    # # for i in  range (1, len(weather_data)):
-    # #     if weather_data[i] < min_val:
-    # #         min_val = weather_data[i]
-    # #         min_idx = i      
-    # # # return (float(min_val), min_idx)
-    # # print(float(min_val))
-    # # print(min_idx)
-    ############################################################################
-    # minimum = weather_data[0]
-    # for value in weather_data[1:]:
-    #     if value < minimum:
-    #         minimum = value
-        
-    # return minimum
-    """Calculates the minimum value in a list of numbers.
-
-    Args:
-        weather_data: A list of numbers.
-    Returns:
-        The minium value and it's position in the list.
-    """
+    val_idx = min_val_idx = 0
+    if weather_data:
+        min_val = float(min(weather_data))
+        for i in range(len(weather_data)):
+            if float(weather_data[i])==min_val:
+                min_val_idx = float(weather_data[i])
+                val_idx = i
+        return(float(min_val_idx), val_idx)
+    else:
+        return()
 pass
-
 
 def find_max(weather_data):
-    max_val = weather_data
-    max_num = max(max_val, default=0)
-    for i in range(len(max_val)):
-        if max_val [i] == max_num:
-            max_idx = i
+    val_idx = max_val_idx = 0
+    if weather_data:
+        max_val = float(max(weather_data))
+        for i in range(len(weather_data)):
+            if float(weather_data[i])==max_val:
+                max_val_idx = float(weather_data[i])
+                val_idx = i
+        return(float(max_val_idx), val_idx)
+    else:
+        return()
+#     """Calculates the maximum value in a list of numbers.
 
-    # print (f'({max_num}, {max_idx})')
-
-
-    return(((float(max_num)),max_idx))
-    """Calculates the maximum value in a list of numbers.
-
-    Args:
-        weather_data: A list of numbers.
-    Returns:
-        The maximum value and it's position in the list.
-    """
-pass
-
-
-def generate_summary(weather_data):
-    """Outputs a summary for the given weather data.
-
-    Args:
-        weather_data: A list of lists, where each sublist represents a day of weather data.
-    Returns:
-        A string containing the summary information.
-    """
-    pass
+#     Args:
+#         weather_data: A list of numbers.
+#     Returns:
+#         The maximum value and it's position in the list.
+#     """
+# pass
 
 
+# def generate_summary(weather_data):
+#     """Outputs a summary for the given weather data.
+
+#     Args:
+#         weather_data: A list of lists, where each sublist represents a day of weather data.
+#     Returns:
+#         A string containing the summary information.
+#     """
+#     pass
+
+
+import csv
 def generate_daily_summary(weather_data):
-    """Outputs a daily summary for the given weather data.
+    weather_data = []
+    with open(csv_file, 'r') as csv_file:
+        reader = csv.reader(csv_file)
+        next(reader) #skip the header line
+        data = list(reader) #sublist command
+        print(data) #row
+        for line in data: 
+                    
+            if line: ##check for if line is not empty then append##
+                weather_data.append([line[0],int(line[1]),int(line[2])])
+                    
+    print (weather_data)
+    # """Outputs a daily summary for the given weather data.
 
-    Args:
-        weather_data: A list of lists, where each sublist represents a day of weather data.
-    Returns:
-        A string containing the summary information.
-    """
+    # Args:
+    #     weather_data: A list of lists, where each sublist represents a day of weather data.
+    # Returns:
+    #     A string containing the summary information.
+    # """
     pass
