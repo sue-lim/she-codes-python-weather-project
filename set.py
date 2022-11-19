@@ -65,65 +65,32 @@
     #     print(weather_data)
         
 ###########################################################################
-def find_min(weather_data):
-    list_of_numbers = (float(weather_data))
-    min_number = min(list_of_numbers)
-    for i in range(len(list_of_numbers)):
-            if list_of_numbers[i] == min_number:
-                min_index = i
-                
-                print(min_index)
-                print(min_number)
-
-
-#     t = weather_data
-#     min_val = t[0]
-#     min_idx = 0
-#     for i in range(len(t)):
-#         if t < min_val:
-#             min_val = t[i]
-#             min_idx = i 
-            
-#     print(min_val)
-#     print(min_idx)
-###########################################################################
-    # min_val = weather_data[0]
-    # min_idx = 0
-    # for i in  range (1, len(weather_data)):
-    #     if weather_data[i] < min_val:
-    #         min_val = weather_data[i]
-    #         min_idx = i      
-    # # return (float(min_val), min_idx)
-    # print(float(min_val))
-    # print(min_idx)
-###########################################################################
-    # num = weather_data[0]
-    # min_index = 0
-    # min_num = min[weather_data]
-    # for i in range(len(weather_data)):
-    #     if num[i] == min_num:
-    #         min_index = i
-    # return(float(num, min_index))
-###########################################################################
-    # min_val = weather_data[0]
-    # min_idx = 0
-    # for i in  range (1, len(weather_data)):
-    #     if weather_data[i] < min_val:
-    #         min_val = weather_data[i]
-            
-    # for i in  range (1, len(weather_data)):
-    #     if weather_data[i] < min_val:
-    #         min_idx == i
-            
-    # return (float(min_val), min_idx)
-
-    # minimum = weather_data[0]
-    # for i in  range (1, len(weather_data)):
-    #     if weather_data[i] < minimum:
-    #         minimum = weather_data[i]
-            
-    # print(minimum, weather_data)
+# def find_min(weather_data):    
+#     val_idx = min_val_idx = 0
+#     if weather_data:
+#         min_val = float(min(weather_data))
+#         for i in range(len(weather_data)):
+#             if float(weather_data[i])==min_val:
+#                 min_val_idx = float(weather_data[i])
+#                 val_idx = i
+#         return(float(min_val_idx), val_idx)
+#     else:
+#         return()
     
+# def find_min(weather_data):
+#     min_idx = None
+#     min_val = weather_data
+#     min_num = min(min_val, default=0)
+#     for i in range(len(min_val)):
+#             if min_val [i] == min_num:
+#                 min_idx = i
+#                 # print(min_num, min_idx)
+
+
+#     return(((float(min_num)),min_idx))
+
+
+
 ###########################################################################
 # 
     # """Calculates the minimum value in a list of numbers.
@@ -135,9 +102,79 @@ def find_min(weather_data):
     # """
     # pass
 
-# print(minimum)
 
-    
+# def find_max(weather_data):
+#     max_idx = None
+#     max_val = weather_data
+#     max_num = max(max_val, default=0)
+#     for i in range(len(max_val)):
+#         if max_val [i] == max_num:
+#             max_idx = i
+
+#     # print (f'({max_num}, {max_idx})')
+
+
+#     return(((float(max_num)),max_idx))  
+
+
+# import csv
+# def generate_daily_summary(weather_data):
+#     weather_data = []
+#     with open(csv_file, 'r') as csv_file:
+#         reader = csv.reader(csv_file)
+#         next(reader) #skip the header line
+#         data = list(reader) #sublist command
+#         print(data) #row
+#         for line in data: 
+                    
+#             if line: ##check for if line is not empty then append##
+#                 weather_data.append([line[0],int(line[1]),int(line[2])])
+                    
+#     print (weather_data)
+
+#     return weather_data
+
+# generate_daily_summary("C:\GIT\my-portfolio\she-codes-python-weather-project-sue-lim\tests\expected_output\example_one_daily_summary.txt")  
+# generate_daily_summary("C:\GIT\my-portfolio\she-codes-python-weather-project-sue-lim\tests\expected_output\example_two_daily_summary.txt")  
+# generate_daily_summary("C:\GIT\my-portfolio\she-codes-python-weather-project-sue-lim\tests\expected_output\example_three_daily_summary.txt") 
+        # print(weather_data)
+    # """Outputs a daily summary for the given weather data.
+
+    # Args:
+    #     weather_data: A list of lists, where each sublist represents a day of weather data.
+    # Returns:
+    #     A string containing the summary information.
+    # """
+# pass
+from weather import calculate_mean, convert_date, convert_f_to_c, find_max, find_min, format_temperature, load_data_from_csv
+
+
+def generate_summary(weather_data):
+        min = 1
+        max = 2
+        # retrieving the information from the different columns and making sure the system knows where the information is required 
+        ft = format_temperature(temp)
+        ft()
+        cel = convert_f_to_c(temp_in_farenheit)
+        mean = calculate_mean(weather_data)
+        c_date = convert_date(iso_string)
+        csv = load_data_from_csv(csv_file)
+        min_w = find_min(weather_data)   
+        max_w = find_max(weather_data)
 
 
 
+print(f"{8} Day Overview")
+#count the rows for the days 
+
+print(f"(The lowest temperature will be {8.3}(), and will occur on {'Friday 19 June 2020'}."))
+# min temp and corresponding day in the correct format 
+
+print(f"The highest temperature will be {22.2}{'°C'}, and will occur on {'Sunday 21 June 2020'}.")
+# max temp and corresponding day in the correct format #
+
+print(f"The average low this week is {11.4}{'°C'}.")
+# mean low 
+
+print(f"The average high this week is {max_w}°C.")
+# mean high 
